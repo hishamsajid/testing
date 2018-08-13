@@ -1,0 +1,13 @@
+<html>
+    <head>
+       
+        <title>Tweets available for</title>
+        
+    </head>
+    <body>
+        <h1>Users available</h1>
+        {% for item in id_list %}
+        <div><p>{{ item.T_id }} from {{ item.party }}</b></p></div>
+        {% endfor %}
+    </body>
+</html> 

@@ -9,10 +9,16 @@ from pymongo import MongoClient
 
 client = MongoClient('localhost',27017)
 db = client['test-db']
-def get_tweets(user_id):
-    asadumar = db['asadumar']
 
-    cursor = asadumar.find()
+def get_tweets(collection_name):
+    
+  
+    
+    twitter_user = db[collection_name]
+    #print(twitter_user)
+
+    cursor = twitter_user.find({})
+    #print(cursor[50])
     user_name = []
     tweet_text = []
     created_at = []
@@ -23,6 +29,8 @@ def get_tweets(user_id):
 
 
     for item in cursor:
+        
+        #print(item['user_name'])
         user_name.append(item['user_name'])
         tweet_text.append(item['tweet_text'])
         created_at.append(item['created_at'])
@@ -44,4 +52,5 @@ def get_tweets(user_id):
     })
 
     df_sorted = df.sort_values(by='created_at',ascending=False)
-    df_sorted.to_csv('asadumar.csv',index=True)
+    #print(df_sorted)
+    return df_sorted
