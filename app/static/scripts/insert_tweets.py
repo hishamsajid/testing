@@ -30,8 +30,8 @@ def insert_tweets():
         {'T_id': '@MaryamNSharif','party':'PMLN','collection':'maryamnawaz'},
         {'T_id': '@JahangirKTareen','party':'PTI','collection':'jahangirktareen'},
         {'T_id': '@sherryrehman','party':'PPP','collection':'sherryrehman'},
-        {'T_id': '@ShireenMazari1','party':'PTI','collection':'shireenmazari'}
-        ]
+        {'T_id': '@ShireenMazari1','party':'PTI','collection':'shireenmazari'},
+       ]
 
     
     for item in id_list:

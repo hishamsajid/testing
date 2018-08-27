@@ -1,5 +1,6 @@
 from flask import Flask
 
+
 app = Flask(__name__)
 
 from app import routes
@@ -20,13 +21,14 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(insert_tweets,
                   'cron', 
                    day_of_week='mon-sun', 
-                   hour=10,
-                   minute=35)
+                   hour=3,
+                   minute=00)
 
 
 scheduler.start()
 
 atexit.register(lambda:scheduler.shutdown())
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#    app.run()
+#    serve(app, listen='*:8080')
